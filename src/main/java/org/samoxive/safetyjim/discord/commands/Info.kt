@@ -14,7 +14,7 @@ class Info : Command() {
     private val supportServer = "https://www.roblox.com/groups/3326755/ROBLOX-Community-Developers#!/about"
     private val githubLink = "https://rcdforum.com/"
     private val botInviteLink = "https://discord.gg/7RuJrUT"
-    private val patreonLink = "https://rcdforum.com/u/dis_chat"
+    private val patreonLink = "https://rcdforum.com/u/robet_millert"
     private val prettyTime = PrettyTime()
 
     override suspend fun run(bot: DiscordBot, event: GuildMessageReceivedEvent, settings: SettingsEntity, args: String): Boolean {
@@ -66,7 +66,7 @@ class Info : Command() {
         embed.addField("Websocket Ping", "Shard $shardString: ${pingShard}ms\nAverage: ${pingAverage}ms", false)
         embed.addField("RAM usage", "${ramUsed}MB / ${ramTotal}MB", false)
         embed.addBlankField(true)
-        embed.addField("Links", "[RCD Group]($supportServer) | [RCDForum]($githubLink) | [RCD Invite]($botInviteLink) | [RCDForum Founder]($patreonLink)", true)
+        embed.addField("Links", "[RCD Group]($supportServer) | [RCDForum]($githubLink) | [RCD Invite]($botInviteLink) | [Project Team Lead]($patreonLink)", true)
         embed.setFooter("Made by RCDForum Team. | Days since last incident: $daysSince", null)
         embed.setColor(Color(0x00FF00))
 
