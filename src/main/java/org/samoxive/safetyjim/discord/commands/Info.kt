@@ -11,10 +11,10 @@ import org.samoxive.safetyjim.discord.*
 
 class Info : Command() {
     override val usages = arrayOf("info - displays some information about the bot")
-    private val supportServer = "https://discord.io/safetyjim"
-    private val githubLink = "https://github.com/samoxive/safetyjim"
-    private val botInviteLink = "https://discordapp.com/oauth2/authorize?client_id=313749262687141888&permissions=268446790&scope=bot"
-    private val patreonLink = "https://www.patreon.com/safetyjim"
+    private val supportServer = "https://www.roblox.com/groups/3326755/ROBLOX-Community-Developers#!/about"
+    private val githubLink = "https://rcdforum.com/"
+    private val botInviteLink = "https://discord.gg/7RuJrUT"
+    private val patreonLink = "https://rcdforum.com/u/dis_chat"
     private val prettyTime = PrettyTime()
 
     override suspend fun run(bot: DiscordBot, event: GuildMessageReceivedEvent, settings: SettingsEntity, args: String): Boolean {
@@ -58,17 +58,17 @@ class Info : Command() {
         }
 
         val embed = EmbedBuilder()
-        embed.setAuthor("Safety Jim - v${config.jim.version} - Shard $shardString", null, selfUser.avatarUrl)
+        embed.setAuthor("Phantom - v${config.jim.version} - Shard $shardString", null, selfUser.avatarUrl)
         embed.setDescription("Lifting the :hammer: since $uptimeString")
         embed.addField("Server Count", guildCount.toString(), true)
         embed.addField("User Count", userCount.toString(), true)
         embed.addBlankField(true)
-        embed.addField("Websocket Ping", "Shard $shardString: ${pingShard}ms\nAverage: ${pingAverage}ms", true)
-        embed.addField("RAM usage", "${ramUsed}MB / ${ramTotal}MB", true)
+        embed.addField("Websocket Ping", "Shard $shardString: ${pingShard}ms\nAverage: ${pingAverage}ms", false)
+        embed.addField("RAM usage", "${ramUsed}MB / ${ramTotal}MB", false)
         embed.addBlankField(true)
-        embed.addField("Links", "[Support]($supportServer) | [Github]($githubLink) | [Invite]($botInviteLink) | [Patreon]($patreonLink)", true)
-        embed.setFooter("Made by Samoxive#8634. | Days since last incident: $daysSince", null)
-        embed.setColor(Color(0x4286F4))
+        embed.addField("Links", "[RCD Group]($supportServer) | [RCDForum]($githubLink) | [RCD Invite]($botInviteLink) | [RCDForum Founder]($patreonLink)", true)
+        embed.setFooter("Made by RCDForum Team. | Days since last incident: $daysSince", null)
+        embed.setColor(Color(0x00FF00))
 
         message.successReact()
         channel.trySendMessage(embed.build())
